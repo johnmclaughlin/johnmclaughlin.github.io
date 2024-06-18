@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elon Thrust</title>
+</head>
+<body>
+  <div id="x"></div>
+  <div id="y"></div>
+  <div id="z"></div>
+  <script>
+    let x = document.querySelector('#x')
+    let y = document.querySelector('#y')
+    let z = document.querySelector('#z')
+
+    function handleMotionEvent(event) {
+        var x = event.accelerationIncludingGravity.x;
+        var y = event.accelerationIncludingGravity.y;
+        var z = event.accelerationIncludingGravity.z;
+
+        x.innerHTML = "X: " + x
+        y.innerHTML = "Y: " + y
+        z.innerHTML = "Z: " + z
+    }
+
+  window.addEventListener("devicemotion", handleMotionEvent, true);
+  </script>
+</body>
+</html>
